@@ -49,8 +49,10 @@ I am Jun Yu Tan (my first name is Jun Yu), currently a Machine Learning Engineer
 
 I graduated from the National University of Singapore with a B.Sc. in [Data Science & Analytics](https://www.stat.nus.edu.sg/), and I'm passionate about building impactful AI experiences to ultimately help make our world more efficient and creative. These days, I place more focus on scalable ML systems, as well as exploring how we can make LLMs more reliable and steerable in AI-enabled products. I also have a strong interest in entrepreneurship and would love to embark on this journey one day.
 
-Previously, I also worked on data science and machine learning projects with [eyos](https://eyos.one/) (a retail analytics platform), [EY Data & Analytics](https://www.ey.com/en_gl/big-data-analytics), [Autodesk](https://www.autodesk.com/), and [Micron](https://www.micron.com/). During my time at Micron, I performed research on novelty detection for predictive maintenance of manufacturing equipment using acoustic IoT systems.
+Previously, I also worked on data science and machine learning projects with [eyos](https://eyos.one/), [Autodesk](https://www.autodesk.com/), and [Micron](https://www.micron.com/). During my time at Micron, I performed research on novelty detection for predictive maintenance of manufacturing equipment using acoustic IoT systems.
 
 ## News  
+
+{{<nd "2023-10-11">}} Gave [a talk](https://www.meetup.com/machine-learning-singapore/events/296502196) at Google Developer Space about techniques to enhance reliability of LLMs in production.
 
 {{<nd "2023-08-21">}} Revamped this blog with a more polished theme.
