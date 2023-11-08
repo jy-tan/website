@@ -6,11 +6,11 @@ draft: false
 toc: true
 ---
 
-As Large Language Models (LLMs) gain mass adoption and excitement, there is no shortage of benchmarks within the LLM community; benchmarks like HellaSwag tests for commonsense inference via sentence completion, while TruthfulQA seeks to measure a model's tendency to reproduce common falsehoods. Evaluating the core task of natural language generation (NLG) in dialogue systems like ADEM, RUBER, and BERTScore try to capture the appropriateness of responses in mimicking the scoring patterns of human annotators<cite>[^1]</cite>.
+As Large Language Models (LLMs) gain mass adoption and excitement, there is no shortage of benchmarks within the LLM community; benchmarks like HellaSwag tests for commonsense inference via sentence completion, while TruthfulQA seeks to measure a model's tendency to reproduce common falsehoods. On the other hand, natural language generation (NLG) evaluation metrics for dialogue systems like ADEM, RUBER, and BERTScore try to capture the appropriateness of responses in mimicking the scoring patterns of human annotators<cite>[^1]</cite>.
 
 [^1]: Tianyu Zhao, Divesh Lala, and Tatsuya Kawahara. 2020. Designing Precise and Robust Dialogue Response Evaluators. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics*, pages 26–33, Online. Association for Computational Linguistics.
 
-But as we march towards greater dependence on the reasoning ability of LLMs, how can we get a sense of how LLMs "think"? Where steerability is concerned (users or developers may desire to add in custom handling logic and instructions), how can ensure that these models continue to follow and reason from these instructions towards a desirable output? There is a sense that verifying the instruction-following thought patterns of these dialogue generations seems to go beyond word overlaps, sentence embeddings, and task-specific benchmarks.
+But as we rely further on (and reap the benefits of) LLMs' reasoning abilities in AI systems and products, how can we still grasp a sense of how LLMs "think"? Where steerability is concerned --- users or developers may desire to add in custom handling logic and instructions --- how can ensure that these models continue to follow and reason from these instructions towards a desirable output? There is a sense that verifying the instruction-following thought patterns of these dialogue generations seems to go beyond word overlaps, sentence embeddings, and task-specific benchmarks.
 
 Let's think beyond LLMs and instead reframe evaluations on an AI system (or agent) level, and examine from first principles on what such a system should and should not do.
 
@@ -79,9 +79,9 @@ How can we check for catastrophic generations?
 
 ## Out-of-Distribution Requests
 
-I would believe that most of the time, undesirable generations arise from the user queries themselves, be it intentional (like prompt jailbreaking or sending inane requests) or asking a question that the system does not yet know how to handle ($\texttt{Select}(S,q)$ returns nothing, or it returns a wrong set of instructions as a query like $q$ was never previously anticipated).
+I believe that most of the time, undesirable generations arise from the user queries themselves, be it intentional (like prompt jailbreaking or sending inane requests) or asking a question that the system does not yet know how to handle ($\texttt{Select}(S,q)$ returns nothing, or it returns a wrong set of instructions as a query like $q$ was never previously anticipated).
 
-The path for OOD queries should always be explicitly handled, with its implementation centered around the product's UX goals. One can surface the impossibility of handling such a query back to the user (e.g., replying "I don't understand, can you elaborate further?"), replying with a best-effort generic reply, or even blocking automatically sending out replies until further human intervention.
+The path for "long-tailed" or OOD queries should always be explicitly handled, with its implementation centered around the product's UX goals. One can surface the impossibility of handling such a query back to the user (e.g., replying "I don't understand, can you elaborate further?"), replying with a best-effort generic reply, or even blocking automatically sending out replies until further human intervention.
 
 This alludes to some sort of memory mechanism in AI systems, be it implemented implicitly (via fine-tuning) or explicitly (via external knowledge bases). Ideally, there should be a way for the LLM to know what a *normal* query looks like, and what queries might not be a good idea for it to handle.
 
@@ -96,16 +96,16 @@ It may be worth the effort to explore making full use of the superior, rapidly a
 The LLM should have a broad enough context to have a sense of how its generations affect the broader environment. That could mean reflecting on its thought processes<cite>[^3]</cite> (even if they are initially specified by a particular answering strategy) and being able to differentiate between larger objectives and smaller subgoals within the prompt.
 
 <div align="center">
-  <img src="/images/ai-reasoning/reflexion.png" width="500">
+  <img src="/images/ai-reasoning/reflexion.png" width="450">
   The Reflexion algorithm
 </div>
 
 [^3]: Noah Shinn, Federico Cassano, Edward Berman, Ashwin Gopinath, Karthik Narasimhan, & Shunyu Yao. (2023). Reflexion: Language Agents with Verbal Reinforcement Learning.
 
-Given a task and some supporting information to perform it, we can encourage an LLM to probe, for example, if there are factual inconsistencies within supporting information, if particular pieces of information could be outdated (if there is data about relative dates), or if the provided information are sufficient to answer the task. The AI system should build up an internal representation of its understanding of how its world works, gradually distilling insights from experiences, and then applying these insights effectively to craft context-aware generations. The ExpeL framework<cite>[^4]</cite> (pictured below) is a good inspiration for an experiential learning framework. In other words, it should formulate a "Theory of You" as it accumulates experiences.
+Given a task and some supporting information to perform it, we can encourage an LLM to probe, for example, if there are factual inconsistencies within supporting information, if particular pieces of information could be outdated (if there is data about relative dates), or if the provided information are sufficient to answer the task. The AI system should build up an internal representation of its understanding of how its world works, gradually distilling insights from experiences, and then applying these insights effectively to craft context-aware generations. The ExpeL framework<cite>[^4]</cite> (pictured below) is a good inspiration for an experiential learning framework. In other words, it should formulate an increasingly coherent "Theory of You" as it accumulates experiences.
 
 <div align="center">
-  <img src="/images/ai-reasoning/expel.png" width="600">
+  <img src="/images/ai-reasoning/expel.png" width="650">
   The ExpeL learning process
 </div>
 
