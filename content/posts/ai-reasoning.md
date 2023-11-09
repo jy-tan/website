@@ -100,7 +100,7 @@ The LLM should have a broad enough context to have a sense of how its generation
   The Reflexion algorithm
 </div>
 
-[^3]: Noah Shinn, Federico Cassano, Edward Berman, Ashwin Gopinath, Karthik Narasimhan, & Shunyu Yao. (2023). Reflexion: Language Agents with Verbal Reinforcement Learning.
+[^3]: Noah Shinn, Federico Cassano, Edward Berman, Ashwin Gopinath, Karthik Narasimhan, & Shunyu Yao. 2023. Reflexion: Language Agents with Verbal Reinforcement Learning.
 
 Given a task and some supporting information to perform it, we can encourage an LLM to probe, for example, if there are factual inconsistencies within supporting information, if particular pieces of information could be outdated (if there is data about relative dates), or if the provided information are sufficient to answer the task. The AI system should build up an internal representation of its understanding of how its world works, gradually distilling insights from experiences, and then applying these insights effectively to craft context-aware generations. The ExpeL framework<cite>[^4]</cite> (pictured below) is a good inspiration for an experiential learning framework. In other words, it should formulate an increasingly coherent "Theory of You" as it accumulates experiences.
 
@@ -109,15 +109,15 @@ Given a task and some supporting information to perform it, we can encourage an 
   The ExpeL learning process
 </div>
 
-[^4]: Andrew Zhao, Daniel Huang, Quentin Xu, Matthieu Lin, Yong-Jin Liu, & Gao Huang. (2023). ExpeL: LLM Agents Are Experiential Learners.
+[^4]: Andrew Zhao, Daniel Huang, Quentin Xu, Matthieu Lin, Yong-Jin Liu, & Gao Huang. 2023. ExpeL: LLM Agents Are Experiential Learners.
 
 The next step could be a way to clarify these uncertainties to the system designer (or owner), receive feedback or updated information, and add these back to its memory or insight pool.
 
-Beyond that, an AI system can suggest to the system designer if any answering strategies are lacking in cogency or completeness, whether there are any potential blind spots in its reasoning paths, or if there should be any pieces of information that would let it do its job (fulfilling its main goal) better. Steerability shouldn't be a one-way street; if LLMs have reached a layer of reasoning sophistication, we should let it steer us to some degree and suggest better ways to solve problems.
+Beyond that, an AI system can suggest to the system designer if any answering strategies are lacking in cogency or completeness, whether there are any potential blind spots in its reasoning paths, or if there should be any pieces of information that would let it do its job (fulfilling its main goal) better. Steerability shouldn't be a one-way street; if LLMs have reached a level of reasoning sophistication, we should let it steer us to some degree and suggest better ways to solve problems.
 
 With this perspective, a way to think about reasoning and generation quality is not just by looking at an LLM's generations, but also by examining its accumulated insights, and how it synthesizes insights to generate responses. And of course, we should be able to intervene and edit these insights if it is not consistent with our world.
 
-At the time of writing, there is still a distance to go before we reach a state where such systems can be easily deployed, but it is nonetheless interesting to think about.
+At the time of writing, there is still a distance to go before we reach a state where such systems can be easily deployed, but it is nonetheless interesting to consider.
 
 ## Closing
 
